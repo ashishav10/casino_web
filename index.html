@@ -179,15 +179,18 @@
   <div class="slideshow-container">
 
     <div class="mySlides fade">
-      <img src="media/pl-888.png" style="width:100%">
+      <img src="media/pl-888.png" style="width:100%"
+onclick="onClick(this)">
     </div>
 
     <div class="mySlides fade">
-      <img src="media/pl-jackpot-city.jpg" style="width:100%">
+      <img src="media/pl-jackpot-city.jpg" style="width:100%"
+onclick="onClick(this)">
     </div>
 
     <div class="mySlides fade">
-      <img src="media/pl-raging-bull.png" style="width:100%">
+      <img src="media/pl-raging-bull.png" style="width:100%"
+onclick="onClick(this)">
     </div>
 
     <div class="mySlides fade">
@@ -266,6 +269,9 @@
     function currentSlide(n) {
       showSlides(slideIndex = n);
     }
+function onClick(element) {
+
+window.location.href='web.html'}
 
     function showSlides(n) {
       var i;
