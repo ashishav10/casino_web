@@ -3,108 +3,126 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="http://fonts.cdnfonts.com/css/casino?styles=23519,23533" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/casino" rel="stylesheet">
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
+      background: url("media/bg_cpy.jpg");
+      background-size: 125%;
     }
 
+    #myImg {
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
+    #myImg:hover {
+      opacity: 0.7;
+    }
 
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.9);
+      /* Black w/ opacity */
+    }
 
-#myImg:hover {opacity: 0.7;}
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
+    /* Caption of Modal Image */
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
 
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
+    /* Add Animation */
+    .modal-content,
+    #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
 
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
+    @-webkit-keyframes zoom {
+      from {
+        -webkit-transform: scale(0)
+      }
 
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
+      to {
+        -webkit-transform: scale(1)
+      }
+    }
 
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
+    @keyframes zoom {
+      from {
+        transform: scale(0)
+      }
 
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
+      to {
+        transform: scale(1)
+      }
+    }
 
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-
-
-
-
-
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
 
     hr.solid {
       border-top: 3px solid #bbb;
     }
+
     * {
       box-sizing: border-box;
     }
@@ -206,10 +224,10 @@
     /* The dots/bullets/indicators */
     .dot {
       cursor: pointer;
-      height: 15px;
-      width: 15px;
+      height: 10px;
+      width: 10px;
       margin: 0 2px;
-      background-color: #bbb;
+      background-color: rgb(42, 42, 42);
       border-radius: 50%;
       display: inline-block;
       transition: background-color 0.6s ease;
@@ -229,9 +247,11 @@
     }
 
     .casino_header {
-      font-family: 'Casino Flat Shadow', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Casino 3D', Tahoma, Geneva, Verdana, sans-serif;
       font-size: xx-large;
+      color: rgb(220, 231, 214);
     }
+
     @-webkit-keyframes fade {
       from {
         opacity: .4
@@ -262,7 +282,7 @@
       }
     }
 
-    @import url('http://fonts.cdnfonts.com/css/casino?styles=23519,23533');
+    @import url('http://fonts.cdnfonts.com/css/casino');
   </style>
 </head>
 
@@ -271,18 +291,15 @@
   <div class="slideshow-container">
 
     <div class="mySlides fade">
-      <img src="media/pl-888.png" style="width:100%"
-onclick="onClick(this)">
+      <img src="media/pl-888.png" style="width:100%" onclick="onClick(this)">
     </div>
 
     <div class="mySlides fade">
-      <img src="media/pl-jackpot-city.jpg" style="width:100%"
-onclick="onClick(this)">
+      <img src="media/pl-jackpot-city.jpg" style="width:100%" onclick="onClick(this)">
     </div>
 
     <div class="mySlides fade">
-      <img src="media/pl-raging-bull.png" style="width:100%"
-onclick="onClick(this)">
+      <img src="media/pl-raging-bull.png" style="width:100%" onclick="onClick(this)">
     </div>
 
     <div class="mySlides fade">
@@ -309,18 +326,58 @@ onclick="onClick(this)">
   <hr class="solid">
   <div class="row">
     <div class="column">
-      <img class="myImages" id="myImg" src="media/888_logo.jpg" alt="Snow" style="width:100%">
+      <img class="myImages" id="myImg" src="media/888_logo.jpg" alt="888 Casino is a bedrock of the online casino industry, launched all the way back in 1997. Using multiple software platforms, including its own privately developed software from 888 Holdings, the online casino presents an enormous selection of online gambling opportunities. 888 Casino is loaded with casino-style games and it's well-respected platform leads the way to many other online casinos to follow; plus from a single account, users can jump over to 888 Sports, 888 Bingo, 888 Backgammon and 888-owned 888poker to expand their online gaming experience.
+      888 Casino supplies a massive assortment of fantastic online casino games. Play your favorite table and card games like Roulette, Craps, Baccarat, Blackjack, Crazy Blackjack and Keno, or visit the Online Slots arena, jam packed with classic reels, video slots and progressive jackpots. Several poker games include Caribbean Poker and Pai Gow Poker. The Video Poker selection presents 7 variants with Progressive Jackpots and up to 50-Hand Power Play on certain games.
+      At 888 Casino there is a large variety of slots ranging from classic slots to video slots and must fall jackpot slots. This premium online casino even has a range of exclusive games you won’t find anywhere else online. 888 has collaborated with many of the top software providers who have designed slot games exclusively for them. The exclusive games available include interesting titles such as Greedy Dragon, Mermaid’s Millions, Noche De Los Muertos and Aztec Realm.
+      Unlike many online casinos that invest all in Slots and tend to neglect other players, 888 casino has a massive collection of card and table games, such as Roulette, Blackjack, Poker and Baccarat.
+      888 Casino also offers a great live casino experience. You will find Live Roulette, Live Blackjack, Live Baccarat, Live Poker, Live Game Shows and Elite Lounge sections.
+      Each section offers a number of thrilling live dealer variants to choose from. The live dealer games are played at different betting amounts to ensure there are options for players of all bankroll budgets. These live casino games are streamed in HD to your chosen device directly from a live studio or casino room.
+      At 888 Casino you’ll always get the best bonuses and promotions starting with a large choice of welcome bonus offers.
+      Here you have a choice between the standard Welcome Bonus and a Premium Welcome Package. Should you choose the standalone Welcome Bonus you will be awarded a 100% welcome bonus of up to $200 on your first deposit.
+      To claim this offer you need to be a new player at the casino making a minimum deposit of $20 or more. Any deposits made via Skrill or Neteller will not be eligible for the bonus. The bonus has to be claimed within 48 hours and is subject to 30x wagering requirements.
+      The Premium Welcome Package is the one most casino players go for as you get rewarded more than once. This welcome package offers you up to $1,500 in bonuses.
+      To claim this welcome offer you need to follow a few simple steps starting with signing up at 888 Casino and making a minimum deposit of $20 or more.
+      It's important mentioning that offers vary from country to country.
+      At 888 Casino you will have access to the top and trusted payment methods such as Visa, MasterCard, ecoPayz, iDebit, MuchBetter, Neteller, PayPal, Qiwi, Rapid Transfer, Skrill, Trustly, Apple Pay, AstroPay Card, EPS, InstaDebit and more. Keep in mind that some of these options will be available for deposits only. All transactions are processed via SSL data encryption to ensure financial and sensitive information is secure.
+      Withdrawals can be made via top payment methods such as Visa, MasterCard, ecoPayz, iDebit, MuchBetter, Neteller, PayPal, Qiwi, Rapid Transfer, Skrill, Trustly and Wire Transfer. All withdrawals are subject to a three day processing period during which the request is reviewed and approved.
+      " style="width:100%">
     </div>
     <div class="column">
-      <img class="myImages" id="myImg" src="media/jackpotcity_logo.jpg" alt="Forest" style="width:100%">
+      <img class="myImages" id="myImg" src="media/jackpotcity_logo.jpg" alt="Jackpot City is an online casino with a flashy and attractive design reminiscent of bright night lights and the glitz of Las Vegas. This casino has been around for over 20 years so it sure knows a thing or two about entertainment. Games are independently tested and there are hundreds to choose from, with video slots, keno, live casino, and Bingo. The site is a fantastic choice for international players, with 50+ languages, 24/7 customer support and many payment methods. 
+      JackpotCity Casino is home to over 600 of the very best online casino games in the industry. The casino is powered exclusively by industry leaders Microgaming and Evolution Gaming.
+      JackpotCity Casino offers the latest slots, card and table games as well as jackpot games. Some of the most popular games at the casino include Thunderstruck II, Immortal Romance, Titans of the Sun and Avalon II. 
+      Card and table game players can enjoy a number of blackjack, baccarat, roulette and blackjack variants. These variants range from the classics to newer variants with a modern twist that will take your wins to new heights.
+      There are even several keno games for those who want to test their lucky numbers and scratch cards for quick gaming sessions.
+      Here you can also find Live Casino section where you’ll get to enjoy a variety of Evolution Gaming Live. The live casino brings you all the best Blackjack, Roulette and Baccarat card and table games all streamed from a live studio.
+      dealers and other players. This sleek and stylish live dealer casino lobby will give you an authentic gaming experience from anywhere at any time.
+      One of the first things to look for when choosing the right online casino for you is the type of bonuses and promotions on offer. A long and happy casino adventure is determined by these offers. At JackpotCity Casino you get to start your casino journey with a superb $1,600 welcome bonus.
+      The welcome bonus package is divided across your first 4 deposits at the casino. With each of these deposits, you’ll be entitled to a 100% bonus. With each of your first 4 deposits, you can claim a 100% bonus of up to $400. To grab a bonus you need to make a minimum deposit of $10 and all bonuses are subjected to a 50x wagering requirement. In order to withdraw any winnings from bonus funds, you need to meet the wagering requirements.
+      At JackpotCity Casino you will have a wide variety of payment options to choose from. All payment options are encrypted, secure and private. For deposits, you can use Visa, MasterCard, Visa Electron, Interac, Neteller, Skrill, Paysafecard, Trustly, PostePay, PugglePay, Lobanet, InstaDebit, Moneta.ru, Neosurf, QiwiWallet, Klarna and WebMoney to name just a few. The payment methods available for deposits and withdrawals might vary based on your region.
+      " style="width:100%">
     </div>
   </div>
   <div class="row">
     <div class="column">
-      <img class="myImages" id="myImg" src="media/raging_bull_logo.png" alt="Snow" style="width:100%">
+      <img class="myImages" id="myImg" src="media/raging_bull_logo.png" alt="Raging Bull Casino is an RTG casino featuring a wide variety of games in downloadable, Instant Play and mobile-play formats. The site features an extensive catalog of slots, table games, video pokers, and some other specialties. A growing number of these games can be played on supported smartphones and tablets as well. Raging Bull Casino is licensed by the government of Curacao.
+      Players at Raging Bull Casino will find all RTG slots, from the famous Reel Series Video Slots to classic three-reel games. These include huge progressive slots that can reach over $1 million, including Aztec’s Millions and Jackpot Cleopatra’s Gold. Some of the other most popular titles include Basketbull, Aladdin’s Wishes, Coyote Cash, Enchanted Garden, Count Spectacular, White Rhino, and nearly 100 others.
+      The table games at Raging Bull Casino are also very diverse. Those who like roulette will find European, French, American, and Multiplayer variants of the game. Blackjack players will enjoy even more variety, with both traditional (Blackjack and European Blackjack) and modern (Face Up 21, Blackjack Perfect Pairs, Pontoon, etc.). Players will also find Baccarat, Vegas Three Card Rummy, Tri-Card Poker, three Caribbean pokers, Let It Ride, War, Red Dog, and others.
+      Raging Bull Casino is home to one of the most diverse catalogs of video poker games. These include all sorts of variants, including standard, wild, bonus, and jackpot games. Among the most popular are Jacks or Better, All American Poker, Bonus Deuces Wild, Double Bonus Poker, Loose Deuces, Pick ‘em Poker, and others.
+      Those looking for something really different can try their luck with Raging Bull Casino’s specialty favourites. These include several keno and bingo games as well as scratch cards, European Slot Poker, and others.
+      Raging Bull Casino has support associates available 24 hours a day, 7 days a week. Players can usually connect in just minutes or less thanks to the site’s live chat interface. Those who live in North America can also call the casino using its toll-free phone number. Players also have the option of using email.
+      Raging Bull Casino demonstrate that they take player safety seriously with SSL. This technology prevents anyone from being able to read or decode private information sent to the casino, and it’s the same technology trusted by the majority of reputable companies on the web.
+      All of the games at Raging Bull Casino have been proven fair through independent audits conducted by TST, a highly reputable independent testing firm.
+      " style="width:100%">
     </div>
     <div class="column">
-      <img class="myImages" id="myImg" src="media/europa_logo.jpg" alt="Forest" style="width:100%">
+      <img class="myImages" id="myImg" src="media/europa_logo.jpg" alt="Casino Europa took the Internet by storm at the turn of the century, launching as a premier online casino that has continued its exceptional grow for the last decade. New members will enjoy a casino bonus, plus weekly and monthly bonuses. Powered by PlayTech, members will find a solid game variety and appealing graphics all rolled up into a stellar casino software platform that is available for Download or instant play Flash.
+      Europa Casino also has a great game lobby, and this features games from numerous developers. This means that you can access titles from brands like Playtech, Red Tiger, Pragmatic Play, Netent and more. The lobby also comes with various categories for you to browse through, starting with slots and moving on to tables, cards, jackpots and others.
+      The biggest number of the games in the casino’s lobby are slot titles. Therefore, you can access such options as Cat Queen, Anaconda Wild II, White King, Space Digger and Tiger Turtle Dragon Phoenix. And amongst the standard slot games, you will also be able to play some jackpot options as well. 
+      The table games that Europa Casino hosts come in the form of multiple roulette, blackjack and baccarat titles. Card games are kept separately from roulette, making them easier to sort through. While not hugely expansive, the table games found at the site are enough to provide a high level of entertainment.
+      You can also navigate across to the live casino section of the site, which is done via the menu on display at the top of the website. This allows you to see the variety of live dealer titles on offer. As with the standard lobby, the live casino lobby has a selection of different categories for you to browse through. A great choice of live blackjack, roulette, baccarat, hold’em and more can be found within.
+      If this casino does sound like one that you would like to join, then you will also be able to benefit from the welcome offer. This requires you to register for an account, and then when you make your first deposit, it will give you a 100% bonus of up to €100. That bonus will also continue to be given to you for a full year whenever you make your first new deposit of each month. At the same time, you can collect a minimum of €25 in weekly loyalty bonus funds, too. This means that there is up to €2,400 available to you in bonus funds for joining Europa! If you are a high roller, then you can deposit at least €1,000 and receive a maximum bonus of €500 instead.
+      Depositing money into your casino account is one of the first processes that you need to undertake. This is why it is a good idea to learn about the supported payment methods straight up. Cards from Visa, Mastercard, Diners Club International, Maestro and Delta are accepted. You can also use options like Paysafecard, Easy EFT, Instadebit, Sofort, EPS and Giropay. E-wallets are also supported, coming from Skrill, Neteller, Webmoney, ecoPayz and others. Additional options include iDebit, Trustly, Astropay, Yandex, Zimpler and bank transfers.
+      As a player at Europa Casino, you are able to withdraw a maximum of €20,000 per month from your account. Usually, this will be sent through the same payment method as used for depositing. It generally depends upon the method in use as to how quickly you receive your funds, too. E-wallets frequently provide the swiftest form of withdrawing, while cards can take up to five business days.
+      " style="width:100%">
     </div>
   </div>
   <hr class="solid">
@@ -331,18 +388,18 @@ onclick="onClick(this)">
 
   <div class="row">
     <div class="column">
-      <img class="myImages" id="myImg"  src="media/jackpotgiant.jpg" alt="Jackpot Giant" style="width:100%">
+      <img class="myImages" id="myImg" src="media/jackpotgiant.jpg" alt="Jackpot Giant" style="width:100%">
     </div>
     <div class="column">
-      <img class="myImages" id="myImg"  src="media/razorshark.png" alt="Razor Shark" style="width:100%">
+      <img class="myImages" id="myImg" src="media/razorshark.png" alt="Razor Shark" style="width:100%">
     </div>
   </div>
   <div class="row">
     <div class="column">
-      <img class="myImages" id="myImg"  src="media/legacyofegypt.png" alt="Legacy of Egypt" style="width:100%">
+      <img class="myImages" id="myImg" src="media/legacyofegypt.png" alt="Legacy of Egypt" style="width:100%">
     </div>
     <div class="column">
-      <img class="myImages" id="myImg"  src="media/megamoolah.png" alt="Megamoolah" style="width:100%">
+      <img class="myImages" id="myImg" src="media/megamoolah.png" alt="Megamoolah" style="width:100%">
     </div>
   </div>
   <div class="row">
@@ -350,42 +407,38 @@ onclick="onClick(this)">
       <img class="myImages" id="myImg" src="media/starburst.jpg" alt="Starbust" style="width:100%">
     </div>
   </div>
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
   <script>
+    // create references to the modal...
+    var modal = document.getElementById('myModal');
+    // to all images -- note I'm using a class!
+    var images = document.getElementsByClassName('myImages');
+    // the image in the modal
+    var modalImg = document.getElementById("img01");
+    // and the caption in the modal
+    var captionText = document.getElementById("caption");
 
+    // Go through all of the images with our custom class
+    for (var i = 0; i < images.length; i++) {
+      var img = images[i];
+      // and attach our click listener for this image.
+      img.onclick = function (evt) {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+    }
 
+    var span = document.getElementsByClassName("close")[0];
 
-
-// create references to the modal...
-var modal = document.getElementById('myModal');
-// to all images -- note I'm using a class!
-var images = document.getElementsByClassName('myImages');
-// the image in the modal
-var modalImg = document.getElementById("img01");
-// and the caption in the modal
-var captionText = document.getElementById("caption");
-
-// Go through all of the images with our custom class
-for (var i = 0; i < images.length; i++) {
-  var img = images[i];
-  // and attach our click listener for this image.
-  img.onclick = function(evt) {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  }
-}
-
-var span = document.getElementsByClassName("close")[0];
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
 
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -397,9 +450,9 @@ span.onclick = function() {
     function currentSlide(n) {
       showSlides(slideIndex = n);
     }
-function onClick(element) {
-
-window.location.href='web.html'}
+    function onClick(element) {
+      window.location.href = 'web.html'
+    }
 
     function showSlides(n) {
       var i;
